@@ -53,7 +53,7 @@ const UserRepository = {
     const { password, ...userDataWithoutPassword } = userData;
     return {id: docSnap.id, ...userDataWithoutPassword};
   },
-  getUserByEmail: async (email: string): Promise<UserSafeData | null> => {
+  getUserByEmail: async (email: string): Promise<UserData | null> => {
     try {
       const q = query(usersCollection, where('email', '==', email));
       const querySnapshot = await getDocs(q);
@@ -62,8 +62,7 @@ const UserRepository = {
       } else {
         const userData = querySnapshot.docs[0].data() as UserBaseData
         
-        const { password, ...userDataWithoutPassword } = userData;
-        return {id: querySnapshot.docs[0].id, ...userDataWithoutPassword};
+        return {id: querySnapshot.docs[0].id, ...userData};
       }
     } catch (error) {
       console.error('Error getting user by email:', error);
