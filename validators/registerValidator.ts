@@ -32,7 +32,7 @@ export default [
     .trim()
     .custom((value: any, { req }: { req: any }) => {
       if (value !== req.body?.password) {
-        throw new Error('Passwords have to match!');
+        throw new ApiError('Passwords have to match!', 500);
       }
       return true;
     }),
@@ -42,8 +42,7 @@ export default [
     (req: Request, res: Response, next: NextFunction) => {
         const errors = validationResult(req);
         if (!errors.isEmpty())
-          throw new Error(errors.array()[0]?.msg.toString())
-          // next(new ErrorHandler(errors.array()[0]?.msg.toString(), 400))
+          next(new ApiError(errors.array()[0]?.msg.toString(), 500))
         next();
     }
   ] as ValidationChain[]

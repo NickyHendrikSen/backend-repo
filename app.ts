@@ -4,7 +4,7 @@ export const app = express()
 import cors from "cors"
 import cookieParser from "cookie-parser"
 
-import { errorHandler } from "./entities/ApiError"
+import ApiError, { errorHandler } from "./entities/ApiError"
 
 import userRoutes from "./routes/userRoutes"
 
@@ -26,7 +26,7 @@ app.get("/test", (req: Request, res: Response, next: NextFunction) => {
 })
 
 app.all("*", (req: Request, res: Response, next: NextFunction) => {
-  const err = new Error(`Route ${req.originalUrl} not found`) as any
+  const err = new ApiError(`Route ${req.originalUrl} not found`, 500) as any
   err.statusCode = 404
   next(err)
 })

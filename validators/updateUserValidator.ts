@@ -13,8 +13,7 @@ export default [
     .custom((value: any, { req, next }: {req: Request, next: NextFunction}) => {
       return UserRepository.getUserByEmail(value).then((data) => {
         if (data && data.id !== req.body.id) {
-          const err = new ApiError('Email already exists.', 500);
-          next(err);
+          throw new ApiError('Email already exists.', 500);
         }
       })
     })
@@ -24,8 +23,7 @@ export default [
     (req: Request, res: Response, next: NextFunction) => {
         const errors = validationResult(req);
         if (!errors.isEmpty())
-          throw new Error(errors.array()[0]?.msg.toString())
-          // next(new ErrorHandler(errors.array()[0]?.msg.toString(), 400))
+          next(new ApiError(errors.array()[0]?.msg.toString(), 500))
         next();
     }
   ] as ValidationChain[]

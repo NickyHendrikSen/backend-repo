@@ -33,7 +33,8 @@ export const updateUserData = async (req: Request, res: Response, next: NextFunc
     const users = await UserRepository.updateUser(userData?.id, userData)
     res.status(201).send({ message: 'Users fetched successfully', users: users });
   } catch (error) {
-    console.error('Error adding user: ', error);
-    res.status(500).send({ message: 'Error adding user', error });
+    console.error('Error updating user: ', error);
+    const err = new ApiError('Error Updating User', 500);
+    next(err);
   }
 }
