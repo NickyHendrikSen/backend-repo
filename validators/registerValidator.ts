@@ -13,7 +13,7 @@ export default [
     .withMessage('Email is required.')
     .isEmail()
     .withMessage('Please enter a valid email.')
-    .custom((value: any, { next }: {next: NextFunction}) => {
+    .custom((value: any) => {
       return UserRepository.getUserByEmail(value).then((data) => {
         if (data) {
           throw new ApiError('Email already exists.', 500);
@@ -38,7 +38,7 @@ export default [
     }),
   check('age')
     .notEmpty().withMessage('Age is required.')
-    .isNumeric().withMessage('Age must be a number.'),
+    .isInt({min: 1}).withMessage('Age must be a number.'),
     (req: Request, res: Response, next: NextFunction) => {
         const errors = validationResult(req);
         if (!errors.isEmpty())
