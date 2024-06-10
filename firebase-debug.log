@@ -1,0 +1,29 @@
+[debug] [2024-06-10T07:14:26.437Z] ----------------------------------------------------------------------
+[debug] [2024-06-10T07:14:26.439Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\nicky\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2024-06-10T07:14:26.439Z] CLI Version:   13.11.2
+[debug] [2024-06-10T07:14:26.440Z] Platform:      win32
+[debug] [2024-06-10T07:14:26.440Z] Node Version:  v19.8.1
+[debug] [2024-06-10T07:14:26.440Z] Time:          Mon Jun 10 2024 14:14:26 GMT+0700 (Western Indonesia Time)
+[debug] [2024-06-10T07:14:26.440Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-06-10T07:14:26.504Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-06-10T07:14:26.504Z] > authorizing via signed-in user (nickyhsen@gmail.com)
+[debug] [2024-06-10T07:14:26.561Z] java version "16.0.2" 2021-07-20
+
+[debug] [2024-06-10T07:14:26.561Z] Java(TM) SE Runtime Environment (build 16.0.2+7-67)
+Java HotSpot(TM) 64-Bit Server VM (build 16.0.2+7-67, mixed mode, sharing)
+
+[debug] [2024-06-10T07:14:26.589Z] Parsed Java major version: 16
+[info] i  emulators: Starting emulators: functions, firestore {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions, firestore"}}
+[debug] [2024-06-10T07:14:26.596Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-06-10T07:14:26.596Z] [firestore] Firestore Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-06-10T07:14:26.596Z] [firestore.websocket] websocket server for firestore only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-06-10T07:14:26.596Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"firestore":[{"address":"127.0.0.1","family":"IPv4","port":8080}],"firestore.websocket":[{"address":"127.0.0.1","family":"IPv4","port":9150}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2024-06-10T07:14:26.599Z] [hub] writing locator at C:\Users\nicky\AppData\Local\Temp\hub-ebuddy-a1655.json
+[debug] [2024-06-10T07:14:26.604Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-06-10T07:14:26.604Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-06-10T07:14:26.604Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"firestore":[{"address":"127.0.0.1","family":"IPv4","port":8080}],"firestore.websocket":[{"address":"127.0.0.1","family":"IPv4","port":9150}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, database, hosting, pubsub, storage, dataconnect {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, database, hosting, pubsub, storage, dataconnect\u001b[22m"}}
+[debug] [2024-06-10T07:14:26.606Z] defaultcredentials: writing to file C:\Users\nicky\AppData\Roaming\firebase\nickyhsen_gmail_com_application_default_credentials.json
+[debug] [2024-06-10T07:14:26.607Z] Setting GAC to C:\Users\nicky\AppData\Roaming\firebase\nickyhsen_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\nicky\\AppData\\Roaming\\firebase\\nickyhsen_gmail_com_application_default_credentials.json"}}
+[debug] [2024-06-10T07:14:26.608Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ebuddy-a1655/adminSdkConfig [none]
